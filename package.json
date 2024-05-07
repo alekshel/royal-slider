@@ -1,13 +1,14 @@
 {
   "name": "royal-slider",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Free, non-commerce, light and simple slider",
+  "main": "dist/js/royal-slider.min.js",
+  "style": "dist/css/royal-slider.min.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "alekshel",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^5.0.0",
