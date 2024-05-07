@@ -5,95 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/style.css">
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/page.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://kit.fontawesome.com/1fdb6937d8.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/prism/prism.css">
+    <script src="assets/prism/prism.js"></script>
 </head>
 <body>
 
 <div class="container">
-    <div class="royal-slider js--royal-slider">
-        <div class="royal-slider__wrapper js--royal-slider__wrapper">
-            <div class="royal-slider__item">
-                <a href="https://google.com/">
-                    <img src="https://content1.rozetka.com.ua/banner_main/image/original/428517091.png" alt="">
-                </a>
-            </div>
-            <div class="royal-slider__item">
-                <img src="https://content1.rozetka.com.ua/banner_main/image/original/426333562.jpg" alt="">
-            </div>
-            <div class="royal-slider__item">
-                <img src="https://content2.rozetka.com.ua/banner_main/image/original/429627846.jpg" alt="">
-            </div>
+    <header id="header">
+        <img id="logo" src="./assets/img/logo.svg" alt="RoyalSlider, Free non-commerce slider">
+        <p>
+            Made with <i class="fa-solid fa-heart heart-color"></i>
+            by <a href="https://github.com/alekshel/" class="bold">alekshel</a>
+        </p>
+    </header>
 
-            <div class="royal-slider__item">
-                <a href="https://google.com/">
-                    <img src="https://content1.rozetka.com.ua/banner_main/image/original/428517091.png" alt="">
-                </a>
+    <main>
+        <h1>Free, non-commerce, light and simple slider</h1>
+        <section class="slider-wrap">
+            <div class="royal-slider js--royal-slider">
+                <div class="royal-slider__wrapper js--royal-slider__wrapper">
+                    <div class="royal-slider__item">
+                        <img src="./assets/img/slides/01.png" alt="">
+                    </div>
+
+                    <div class="royal-slider__item">
+                        <img src="./assets/img/slides/01.png" alt="">
+                    </div>
+
+                    <div class="royal-slider__item">
+                        <img src="./assets/img/slides/01.png" alt="">
+                    </div>
+                </div>
+
+                <button class="royal-slider__btn royal-slider__btn--prev js--royal-slider__btn--prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                    </svg>
+                </button>
+                <button class="royal-slider__btn royal-slider__btn--next js--royal-slider__btn--next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+                    </svg>
+                </button>
+
+                <div class="royal-slider__progress-bar js--royal-slider__progress-bar"></div>
             </div>
-            <div class="royal-slider__item">
-                <img src="https://content1.rozetka.com.ua/banner_main/image/original/426333562.jpg" alt="">
+            <div class="code-box">
+                <pre class="cdn js--template">
+                    <code class="language-html"></code>
+                </pre>
+                <pre class="html js--template">
+                    <code class="language-html"></code>
+                </pre>
+                <pre class="js js--template">
+                    <code class="language-js"></code>
+                </pre>
             </div>
-            <div class="royal-slider__item">
-                <img src="https://content2.rozetka.com.ua/banner_main/image/original/429627846.jpg" alt="">
+        </section>
+
+        <h2>Documentation for the RoyalSlider Constructor Function</h2>
+
+        <p>Fields:</p>
+        <div class="docs-wrap">
+            <ul class="ul-docs">
+                <li>
+                    <strong class="secondary-color">className</strong> (type: String, default: '.js--royal-slider'): This is the CSS selector used to identify the slider element on the page. You can change this value if your slider has a different class.
+                </li>
+                <li>
+                    <strong class="secondary-color">intervalPlayTime</strong> (type: Number, default: 2500): This is the time interval (in milliseconds) after which the slider automatically moves to the next slide. You can change this value to control the speed of the slider's automatic transition.
+                </li>
+                <li>
+                    <strong class="secondary-color">progressType</strong> (type: String, default: 'basic'): This is the type of progress indicator for the slider. Currently, two types are supported: <strong class="secondary-color">'basic'</strong> and <strong class="secondary-color">'dots'</strong>. 'dots' add functionality move to N slide.
+                </li>
+                <li>
+                    <strong class="secondary-color">leftDirection</strong> (type: Boolean, default: false): This is the direction of the slider's automatic transition. If this value is set to <strong class="secondary-color">true</strong>, the slider will automatically move to the left. If it is set to <strong class="secondary-color">false</strong>, the slider will automatically move to the right.
+                </li>
+            </ul>
+            <div class="royal-slider js--royal-slider2">
+                <div class="royal-slider__wrapper js--royal-slider__wrapper">
+                    <div class="royal-slider__item">
+                        <img src="./assets/img/slides/01.png" alt="">
+                    </div>
+
+                    <div class="royal-slider__item">
+                        <img src="./assets/img/slides/01.png" alt="">
+                    </div>
+
+                    <div class="royal-slider__item">
+                        <img src="./assets/img/slides/01.png" alt="">
+                    </div>
+                </div>
+
+                <button class="royal-slider__btn royal-slider__btn--prev js--royal-slider__btn--prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                    </svg>
+                </button>
+                <button class="royal-slider__btn royal-slider__btn--next js--royal-slider__btn--next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+                    </svg>
+                </button>
+
+                <div class="royal-slider__progress-bar js--royal-slider__progress-bar"></div>
             </div>
         </div>
 
-        <button class="royal-slider__btn royal-slider__btn--prev js--royal-slider__btn--prev">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-            </svg>
-        </button>
-        <button class="royal-slider__btn royal-slider__btn--next js--royal-slider__btn--next">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
-            </svg>
-        </button>
-
-        <div class="royal-slider__progress-bar js--royal-slider__progress-bar"></div>
-    </div>
-
-    <div class="royal-slider js--royal-slider-2" style="margin: 20px 0">
-        <div class="royal-slider__wrapper js--royal-slider__wrapper">
-            <div class="royal-slider__item">
-                <a href="https://google.com/">
-                    <img src="https://content1.rozetka.com.ua/banner_main/image/original/428517091.png" alt="">
-                </a>
-            </div>
-            <div class="royal-slider__item">
-                <img src="https://content1.rozetka.com.ua/banner_main/image/original/426333562.jpg" alt="">
-            </div>
-            <div class="royal-slider__item">
-                <img src="https://content2.rozetka.com.ua/banner_main/image/original/429627846.jpg" alt="">
-            </div>
-
-            <div class="royal-slider__item">
-                <a href="https://google.com/">
-                    <img src="https://content1.rozetka.com.ua/banner_main/image/original/428517091.png" alt="">
-                </a>
-            </div>
-            <div class="royal-slider__item">
-                <img src="https://content1.rozetka.com.ua/banner_main/image/original/426333562.jpg" alt="">
-            </div>
-            <div class="royal-slider__item">
-                <img src="https://content2.rozetka.com.ua/banner_main/image/original/429627846.jpg" alt="">
-            </div>
-        </div>
-
-        <button class="royal-slider__btn royal-slider__btn--prev js--royal-slider__btn--prev">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-            </svg>
-        </button>
-        <button class="royal-slider__btn royal-slider__btn--next js--royal-slider__btn--next">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
-            </svg>
-        </button>
-
-        <div class="royal-slider__progress-bar js--royal-slider__progress-bar"></div>
-    </div>
+        <p class="center">Logo is generated by AI, photo by Freepik</p>
+    </main>
 </div>
 
-<script src="./assets/main.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    const royalSlider = new RoyalSlider({
+        progressType: 'dots'
+    });
+    royalSlider.init();
+
+    const royalSlider2 = new RoyalSlider({
+        className: '.js--royal-slider2',
+        progressType: 'basic',
+        leftDirection: true
+    });
+    royalSlider2.init();
+</script>
+<script>
+    let templates = {};
+
+    templates.cdn = `
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alekshel/royal-slider/dist/royal-slider.min.css">
+<script src="https://cdn.jsdelivr.net/gh/alekshel/royal-slider/dist/royal-slider.min.js"><\/script>
+    `.trim();
+
+    templates.html = `
+<div class="royal-slider js--royal-slider">
+    <div class="royal-slider__wrapper js--royal-slider__wrapper">
+        <div class="royal-slider__item">
+            <a href="https://google.com/">
+                <img src="https://content1.rozetka.com.ua/banner_main/image/original/428517091.png" alt="">
+            </a>
+        </div>
+        <div class="royal-slider__item">
+            <img src="https://content1.rozetka.com.ua/banner_main/image/original/426333562.jpg" alt="">
+        </div>
+        <div class="royal-slider__item">
+            <img src="https://content2.rozetka.com.ua/banner_main/image/original/429627846.jpg" alt="">
+        </div>
+
+        <div class="royal-slider__item">
+            <a href="https://google.com/">
+                <img src="https://content1.rozetka.com.ua/banner_main/image/original/428517091.png" alt="">
+            </a>
+        </div>
+        <div class="royal-slider__item">
+            <img src="https://content1.rozetka.com.ua/banner_main/image/original/426333562.jpg" alt="">
+        </div>
+        <div class="royal-slider__item">
+            <img src="https://content2.rozetka.com.ua/banner_main/image/original/429627846.jpg" alt="">
+        </div>
+    </div>
+
+    <button class="royal-slider__btn royal-slider__btn--prev js--royal-slider__btn--prev">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+        </svg>
+    </button>
+    <button class="royal-slider__btn royal-slider__btn--next js--royal-slider__btn--next">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+            <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/>
+        </svg>
+    </button>
+
+    <div class="royal-slider__progress-bar js--royal-slider__progress-bar"></div>
+</div>
+    `.trim();
+
+    templates.js = `
+const royalSlider = new RoyalSlider({
+    progressType: 'dots'
+});
+royalSlider.init();
+    `.trim();
+
+    function setCopyMessage(element) {
+        element.style.setProperty('--after-content', '"Copied!"');
+        setTimeout(() => {
+            element.style.setProperty('--after-content', '"Copy"');
+        }, 500);
+    }
+
+    document.querySelectorAll(".js--template").forEach((el) => {
+        const currentTemplate = el.classList[0];
+        const codeElement = el.querySelector("code");
+        codeElement.textContent = templates[currentTemplate];
+
+        el.addEventListener('click', (event) => {
+            const code = event.target.closest("pre")
+            setCopyMessage(code);
+            navigator.clipboard.writeText(templates[currentTemplate]);
+        });
+    });
+</script>
 
 </body>
 </html>

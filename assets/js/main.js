@@ -205,14 +205,3 @@ function RoyalSlider({
         }, INTERVAL_MILLISECONDS);
     };
 }
-
-const royalSlider = new RoyalSlider({
-    progressType: 'dots'
-});
-royalSlider.init();
-
-const royalSlider2 = new RoyalSlider({
-    className: '.js--royal-slider-2',
-    leftDirection: true
-});
-royalSlider2.init();
