@@ -190,6 +190,14 @@ function RoyalSlider({
                     event.preventDefault();
                 }
             });
+
+            link.addEventListener('touchend', (event) => {
+                if (hasLinkPermission) {
+                    event.preventDefault();
+                } else {
+                    window.location.href = link.href;
+                }
+            });
         });
 
         wrapper.addEventListener('mousedown', this.dragStart);
@@ -202,10 +210,12 @@ function RoyalSlider({
         wrapper.addEventListener('touchend', (event) => {
             this.dragEnd(event);
             this.restartAutoPlay();
+            hasLinkPermission = false;
         });
         slider.addEventListener('touchcancel', (event) => {
             this.dragEnd(event);
             this.restartAutoPlay();
+            hasLinkPermission = false;
         });
     };
 
