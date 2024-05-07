@@ -19,6 +19,7 @@ function RoyalSlider({
     let activeSlide = 0;
     let progressBarStep = 0;
 
+    let autoPlayInterval;
     let dragStartX = 0;
     let isDragging = false;
     let hasLinkPermission = false;
@@ -143,14 +144,13 @@ function RoyalSlider({
 
     this.disableButtons = () => {
         activeSlide <= 0 ? prevButton.disabled = true : prevButton.disabled = false;
-
         this.isLastSlide() ? nextButton.disabled = true : nextButton.disabled = false;
     };
 
     this.dragStart = (event) => {
         isDragging = true;
         hasLinkPermission = false;
-        dragStartX = event.clientX;
+        dragStartX = event.clientX ?? event.touches[0].clientX;
     };
 
     this.dragMove = (event) => {
@@ -158,7 +158,8 @@ function RoyalSlider({
         if (!isDragging) return;
         hasLinkPermission = true;
 
-        let pixelsMoved = event.clientX - dragStartX;
+        const clientX = event.clientX ?? event.touches[0].clientX;
+        let pixelsMoved = clientX - dragStartX;
         if (Math.abs(pixelsMoved) > 25) {
             if (pixelsMoved > 0) {
                 this.prev();
@@ -195,13 +196,29 @@ function RoyalSlider({
         wrapper.addEventListener('mousemove', this.dragMove);
         wrapper.addEventListener('mouseup', this.dragEnd);
         slider.addEventListener('mouseleave', this.dragEnd);
+
+        wrapper.addEventListener('touchstart', this.dragStart);
+        wrapper.addEventListener('touchmove', this.dragMove);
+        wrapper.addEventListener('touchend', (event) => {
+            this.dragEnd(event);
+            this.restartAutoPlay();
+        });
+        slider.addEventListener('touchcancel', (event) => {
+            this.dragEnd(event);
+            this.restartAutoPlay();
+        });
     };
 
     this.autoPlay = () => {
-        setInterval(() => {
+        autoPlayInterval = setInterval(() => {
             if (!this.isMouseOnSlider()) {
                 leftDirection ? this.prev(true) : this.next(true);
             }
         }, INTERVAL_MILLISECONDS);
+    };
+
+    this.restartAutoPlay = () => {
+        clearInterval(autoPlayInterval);
+        this.autoPlay();
     };
 }
